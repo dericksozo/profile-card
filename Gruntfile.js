@@ -14,9 +14,13 @@ module.exports = function(grunt) {
       dev: {
         src: ['src/scss/styles.scss'],
         dest: 'src/css/styles.css',
+
+        options: {
+            loadPath: require('node-bourbon').includePaths
+        }
       },
     },
-    
+
     watch: {
       sass: {
         // We watch and compile sass files as normal but don't live reload here
