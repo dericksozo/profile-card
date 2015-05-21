@@ -53,3 +53,18 @@ img {
     height: auto;
     border: 0;
 }
+
+input {
+    margin: 0; // Some browsers are rendering some margins wrong.
+    font: inherit;
+    color: inherit;
+    line-height: normal;
+    border-radius: 0; // iOS Safari seems to set a border-radius by default on inputs. Yuck.
+    -webkit-appearance: none;
+}
+
+button::-moz-focus-inner,
+input::-moz-focus-inner {
+  border: 0;
+  padding: 0;
+}
