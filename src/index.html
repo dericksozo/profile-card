@@ -1,20 +1,98 @@
-<!doctype>
+<!doctype html>
 <html>
 	<head>
-                <meta charset="utf-8">
-                <meta http-equiv="X-UA-Compatible" content="IE=edge">
-                <title>Derick Ruiz Template</title>
-                <meta name="HandheldFriendly" content="True">
-                <meta name="MobileOptimized" content="320">
-                <meta name="viewport" content="width=device-width, initial-scale=1">
-                <meta name="Description" content="">
-                <link rel="canonical" href="">
-                <meta http-equiv="cleartype" content="on">
-                <link rel="stylesheet" href="css/styles.css">
+	    <meta charset="utf-8">
+	    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+	    <title>Derick Ruiz Template</title>
+	    <meta name="HandheldFriendly" content="True">
+	    <meta name="MobileOptimized" content="320">
+	    <meta name="viewport" content="width=device-width, initial-scale=1">
+	    <meta name="Description" content="">
+	    <link rel="canonical" href="">
+	    <meta http-equiv="cleartype" content="on">
+
+		<!--[if gte IE 9]>
+			<style type="text/css">
+				.gradient {
+	       		filter: none;
+	    	}
+	  		</style>
+		<![endif]-->
+
+		<script src="//use.typekit.net/hoy5cba.js"></script>
+		<script>try{Typekit.load({ async: true });}catch(e){}</script>
+		<link rel="stylesheet" href="css/styles.css">
 	</head>
 	<body>
-                <div class='wrapper'>
-                        <h1>Hello World, this is a template.</h1>
-                </div>
+	    <div class='wrapper'>
+
+			<div class='video'>
+				<video id='js-video' autoplay='autoplay' loop='loop' muted='muted'>
+					<source src="vids/video-3.mp4" type="video/mp4">
+				</video>
+			</div>
+
+			<div class='deck'><!-- Organism -->
+				<div class='card image-card js-image-card gradient'>
+					<h1 class='card--name'>Derick Ruiz</h1>
+				</div><!-- Molecule -->
+
+				<div class='card maps-card anim-card-right js-maps-card'>
+					<div id='js-maps' class='map'></div>
+				</div>
+
+				<div class='card stats-card anim-card-up js-stats-card'>
+					<div class='stats stats-red'>
+						<div class='stats--header'>
+							<h2 class='stats--title'>Brain Activity</h2>
+							<div class='stats--number'>95</div>
+						</div>
+						<!-- <div class='stats--wave' data-speed="8" data-ease="Linear" data-wave-type="sine" data-time-modifier="1.5" data-color="rgba(58, 96, 218, 1)"data-wave-length="30" data-segment-length="40">
+							<canvas></canvas>
+						</div> -->
+						<div class='stats--wave' data-speed="8" data-ease="Linear" data-wave-type="sine" data-time-modifier="1.5" data-color="rgba(180, 174, 174, 1)"data-wave-length="30" data-segment-length="40">
+							<canvas></canvas>
+						</div>
+					</div>
+					<div class='stats stats-blue'>
+						<div class='stats--header'>
+							<h2 class='stats--title'>Heart Rate</h2>
+							<div class='stats--number'>60</div>
+						</div>
+						<!-- <div class='stats--wave' data-speed="10" data-ease="Linear" data-wave-type="sawtooth" data-time-modifier="0.1" data-color="rgba(255, 64, 38, 1)" data-wave-length="30" data-segment-length="20">
+							<canvas></canvas>
+						</div> -->
+						<div class='stats--wave' data-speed="10" data-ease="Linear" data-wave-type="sawtooth" data-time-modifier="0.1" data-color="rgba(180, 174, 174, 1)" data-wave-length="30" data-segment-length="20">
+							<canvas></canvas>
+						</div>
+					</div>
+					<div class='stats stats-yellow'>
+						<div class='stats--header'>
+							<h2 class='stats--title'>Respiration Rate</h2>
+							<div class='stats--number'>28</div>
+						</div>
+						<!-- <div class='stats--wave' data-speed="8" data-ease="Linear" data-wave-type="sine" data-time-modifier="1.5" data-color="rgba(255, 221, 0, 1)" data-wave-length="5" data-segment-length="5">
+							<canvas></canvas>
+						</div> -->
+						<div class='stats--wave' data-speed="8" data-ease="Linear" data-wave-type="sine" data-time-modifier="1.5" data-color="rgba(180, 174, 174, 1)" data-wave-length="5" data-segment-length="5">
+							<canvas></canvas>
+						</div>
+					</div>
+				</div>
+				<div class='card personal-card anim-card-left js-personal-card'>
+					<div class='biography'>
+						<h2 class='biography--title'>Biography</h2>
+						<p class='biography--content'>This is a paragraph for the biography. I will make it long enough so that it extends pretty far down and possibly a little longer too.</p>
+						<p class='biography--content'>This is a paragraph for the biography. I will make it long enough so that it extends pretty far down and possibly a little longer too.</p>
+						<p class='biography--content'>This is a paragraph for the biography. I will make it long enough so that it extends pretty far down and possibly a little longer too.</p>
+					</div>
+				</div>
+			</div>
+	    </div>
+
+		<script type="text/javascript" src="https://maps.googleapis.com/maps/api/js?key=AIzaSyAvcTekpPuZysdAZnjcJCzi34GkXelO280"></script>
+		<script src="js/vendor/jquery-2.1.4.min.js"></script>
+		<script src="js/vendor/sine-waves.js"></script>
+		<script src="js/profile-card.js"></script>
 	</body>
 </html>

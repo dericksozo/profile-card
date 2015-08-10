@@ -1,0 +1,24 @@
+.biography {
+
+    overflow: hidden;
+    margin-left: 1rem;
+    margin-top: 0.5rem;
+    margin-left: 0.5rem;
+
+    &--title,
+    &--content {
+        color: #fdfdfd;
+    }
+
+    &--title {
+        font-size: 1.618rem;
+        margin-bottom: 0.5rem;
+    }
+
+    &--content {
+        font-family: $font-family-freight;
+        font-size: 1rem;
+        line-height: 1.4;
+        margin-bottom: 1rem;
+    }
+}

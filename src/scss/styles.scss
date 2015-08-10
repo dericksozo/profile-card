@@ -1,6 +1,7 @@
 @import 'bourbon';
 @import 'foundation';
 @import 'utilities';
+@import 'variables';
 
 html {
 	/* Typography related rules */
@@ -8,7 +9,23 @@ html {
 	-moz-font-feature-settings: "kern=0";
 	-ms-font-feature-settings: "kern" 0;
 	-webkit-font-smoothing: antialiased;
+	-moz-font-smoothing: antialiased;
 	-moz-osx-font-smoothing: grayscale;
-
+	-o-font-smoothing: antialiased;
 	-webkit-appearance: none;
 }
+
+body {
+	font-size: 100%;
+	font-family: $font-family-franklin;
+	background-color: #141313;
+}
+
+// Organisms
+@import 'deck';
+
+// Molecules
+@import 'card';
+@import 'stats';
+@import 'video';
+@import 'biography';

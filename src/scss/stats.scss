@@ -1,0 +1,61 @@
+.stats {
+    &:first-child {
+        margin-top: 0.5rem;
+    }
+
+    &--header {
+        @include clearfix;
+        margin-bottom: 0.5rem;
+    }
+
+    &--title {
+        font-size: 1em;
+        display: block;
+        float: left;
+        color: #fdfdfd;
+        padding-left: 0.5rem;
+        padding-top: 0.5rem;
+    }
+
+    &--number-circle {
+        display: block;
+        float: right;
+
+        border-radius: 100%;
+
+        background-color: #3A60DA;
+
+        position: relative;
+
+        width: 30px;
+        height: 30px;
+
+        margin-right: 0.5rem;
+        margin-top: 0.5rem;
+    }
+
+    &--number {
+        color: #fdfdfd;
+
+        display: block;
+        float: right;
+
+        font-weight: 30;
+        font-size: 0.85rem;
+
+        margin-top: 0.5rem;
+        margin-right: 0.5rem;
+    }
+
+    &--wave {
+        overflow: hidden;
+        margin-bottom: 0.5rem;
+    }
+
+    &--wave > canvas {
+        width: 120%;
+        height: 50px;
+
+        margin-left: -10px;
+    }
+}
