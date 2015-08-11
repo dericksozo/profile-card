@@ -1,7 +1,7 @@
 .card {
 
-    height: 300px;
-    width: 300px;
+    height: 200px;
+    width: 200px;
 
     -webkit-border-radius: 4px;
     -moz-border-radius: 4px;
@@ -32,7 +32,7 @@
     }
 
     &.image-card {
-        background-image: url("/img/derick-ruiz-3.jpg");
+        background-image: url("http://derickruiz.com/profile-card/src/img/derick-ruiz-3.jpg");
         background-position: 5% 18%;
         background-size: inherit;
     }
@@ -64,7 +64,7 @@
     }
 
     &.maps-card > .map {
-        height: 300px;
+        height: 200px;
 
         -webkit-border-radius: 4px;
         -moz-border-radius: 4px;
@@ -135,5 +135,17 @@
 
     &.hidden {
         display: none;
+    }
+}
+
+@media only screen and (min-width: 50em) and (min-height: 50em) {
+    .card {
+        height: 300px;
+        width: 300px;
+    }
+
+    .card.maps-card > .map {
+        height: 300px;
+
     }
 }
