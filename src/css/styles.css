@@ -113,8 +113,8 @@ body {
   z-index: 1; }
 
 .card {
-  height: 300px;
-  width: 300px;
+  height: 200px;
+  width: 200px;
   -webkit-border-radius: 4px;
   -moz-border-radius: 4px;
   border-radius: 4px;
@@ -138,7 +138,7 @@ body {
     left: 0.5rem;
     bottom: 0.5rem; }
   .card.image-card {
-    background-image: url("/img/derick-ruiz-3.jpg");
+    background-image: url("http://derickruiz.com/profile-card/src/img/derick-ruiz-3.jpg");
     background-position: 5% 18%;
     background-size: inherit; }
   .card.image-card:before {
@@ -169,7 +169,7 @@ body {
   .card.maps-card {
     background-color: transparent; }
   .card.maps-card > .map {
-    height: 300px;
+    height: 200px;
     -webkit-border-radius: 4px;
     -moz-border-radius: 4px;
     border-radius: 4px; }
@@ -214,6 +214,13 @@ body {
     transform: translate3d(-70%, -50%, 0px); }
   .card.hidden {
     display: none; }
+
+@media only screen and (min-width: 50em) and (min-height: 50em) {
+  .card {
+    height: 300px;
+    width: 300px; }
+  .card.maps-card > .map {
+    height: 300px; } }
 
 .stats:first-child {
   margin-top: 0.5rem; }
