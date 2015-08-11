@@ -1,7 +1,18 @@
 $(function () {
 
-    document.getElementById('js-video').controls = false;
-    var map;
+    $('#js-video').controls = false;
+
+    function getInstagramPhotos() {
+        var feed = new Instafeed({
+            get: 'tagged',
+            tagName: 'vsco東京',
+            clientId: 'ba35984961c543dfad202e51873035fb',
+            sortBy: 'most-liked',
+            resolution: 'low_resolution',
+            limit: 10
+        });
+        feed.run();
+    }
 
     function initializeMap() {
 
@@ -27,105 +38,73 @@ $(function () {
 
     }
 
-    function createWaves() {
-        var stats = document.getElementsByClassName('stats--wave');
-        var i, waves, data, stat;
-
-        for ( i = 0; i < stats.length; i += 1) {
-            stat = stats[i];
-            data = $(stat).data();
-
-            waves = new SineWaves({
-              // Canvas Element
-              el: stat.children[0],
-
-              // General speed of entire wave system
-              speed: data.speed,
-
-              // How many degress should we rotate all of the waves
-              rotate: 0,
-
-              // Ease function from left to right
-              ease: data.ease,
-
-              // Specific how much the width of the canvas the waves should be
-              // This can either be a number or a percent
-              waveWidth: '100%',
-
-              // An array of wave options
-              waves: [
-                {
-                  timeModifier: data.timeModifier,   // This is multiplied againse `speed`
-                  lineWidth: 3,      // Stroke width
-                  amplitude: 20,    // How tall is the wave
-                  wavelength: data.waveLength,   // How long is the wave
-                  segmentLength: data.segmentLength, // How smooth should the line be
-                  strokeStyle: 'rgba(58, 96, 218, 0.5)', // Stroke color and opacity
-                  type: data.waveType       // Wave type
-                }
-              ],
-
-              // Perform any additional initializations here
-              initialize: function (){},
-
-              // This function is called whenver the window is resized
-              resizeEvent: function() {
-
-                // Here is an example on how to create a gradient stroke
-                var gradient = this.ctx.createLinearGradient(0, 0, this.width, 0);
-                gradient.addColorStop(0, data.color);
-                gradient.addColorStop(0.5, data.color);
-                gradient.addColorStop(1, data.color);
-
-                var index = -1;
-                var length = this.waves.length;
-                  while(++index < length){
-                  this.waves[index].strokeStyle = gradient;
-                }
-              }
-            });
-
-        }
-    }
-
-    /* Extending the jQuery object, to animate a card based on it's classname. */
-    $.fn.animateCard = function () {
-        $(this).toggleClass('is-card-out');
-    };
-
-    /* Returns the card element associated with the button. */
-    function getAssociatedCard(button) {
-        var classList = button.className.split(/\s+/);
-        var i, parts;
-
-        for ( i = 0; i < classList.length; i += 1 ) {
-
-            if (~classList[i].indexOf('js-')) {
-
-                parts = classList[i].split('-');
-                parts[parts.length - 1] = 'card';
-
-                return document.getElementsByClassName(parts.join('-'));
-
-            }
-        }
-    }
-
     function animateCardsIn() {
         for (var i = 0; i < document.getElementsByClassName('card').length; i += 1) {
             (function (i, card) {
                 setTimeout(function () {
-                    $(card).click();
-                }, 1000 * i);
+                    $(card).addClass('is-card-out');
+                }, 1000);
+            }(i, document.getElementsByClassName('card')[i]));
+
+            (function (i, card) {
+                setTimeout(function () {
+                    $(card).removeClass('is-card-out');
+                }, 3000);
             }(i, document.getElementsByClassName('card')[i]));
         }
     }
 
-    $('.card').on('click', function () {
-        $(this).animateCard();
+    initializeMap();
+    getInstagramPhotos();
+    animateCardsIn();
+
+    $(document).on('mouseover', '[data-hover-behavior="expand"]', function (event) {
+        var cardClassName = $(this).data('card');
+        var $card = $(cardClassName);
+
+        $('.card').each(function () {
+            $(this).removeClass('is-card-hover');
+        });
+
+        if ($card.hasClass('is-card-out')) {
+            $card.removeClass('is-card-hover');
+        } else {
+            $card.addClass('is-card-hover');
+        }
+
+        if ($('.card.stats-card').hasClass('is-card-out') && ! $card.hasClass('is-card-out')) {
+            $('.card.stats-card').addClass('is-card-outter');
+        }
     });
 
-    initializeMap();
-    createWaves();
-    animateCardsIn();
+    $(document).on('mouseleave', '[data-hover-behavior="expand"]', function (event) {
+        var cardClassName = $(this).data('card');
+        var $card = $(cardClassName);
+
+        $('.card').each(function () {
+            $(this).removeClass('is-card-hover');
+        });
+
+        if ($('.card.stats-card').hasClass('is-card-out') && ! $card.hasClass('is-card-out')) {
+            $('.card.stats-card').removeClass('is-card-outter');
+        }
+    });
+
+    $(document).on('click', '[data-click-behavior="expand"]', function (event) {
+        var cardClassName = $(this).data('card');
+        var $card = $(cardClassName);
+
+        $card.addClass('is-card-out');
+        $card.removeClass('is-card-hover');
+        $('.card.stats-card').removeClass('is-card-outter');
+    });
+
+    $(document).on('click', '#instafeed a', function (event) {
+        event.preventDefault();
+
+        $('#instafeed a').toggleClass('hidden');
+
+        $(this).removeClass('hidden');
+        $(this).toggleClass('clicked');
+    });
 });

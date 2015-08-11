@@ -33,7 +33,7 @@
 			</div>
 
 			<div class='deck'><!-- Organism -->
-				<div class='card image-card js-image-card gradient'>
+				<div class='card image-card anim-card-down js-image-card gradient'>
 					<h1 class='card--name'>Derick Ruiz</h1>
 				</div><!-- Molecule -->
 
@@ -42,57 +42,58 @@
 				</div>
 
 				<div class='card stats-card anim-card-up js-stats-card'>
-					<div class='stats stats-red'>
+					<!-- <div class='stats stats-red'>
 						<div class='stats--header'>
 							<h2 class='stats--title'>Brain Activity</h2>
 							<div class='stats--number'>95</div>
 						</div>
-						<!-- <div class='stats--wave' data-speed="8" data-ease="Linear" data-wave-type="sine" data-time-modifier="1.5" data-color="rgba(58, 96, 218, 1)"data-wave-length="30" data-segment-length="40">
-							<canvas></canvas>
-						</div> -->
 						<div class='stats--wave' data-speed="8" data-ease="Linear" data-wave-type="sine" data-time-modifier="1.5" data-color="rgba(180, 174, 174, 1)"data-wave-length="30" data-segment-length="40">
 							<canvas></canvas>
 						</div>
-					</div>
-					<div class='stats stats-blue'>
+					</div> -->
+
+					<div class='stats stats-twitter'>
 						<div class='stats--header'>
-							<h2 class='stats--title'>Heart Rate</h2>
-							<div class='stats--number'>60</div>
+							<h2 class='stats--title'>Latest Tweet</h2>
 						</div>
-						<!-- <div class='stats--wave' data-speed="10" data-ease="Linear" data-wave-type="sawtooth" data-time-modifier="0.1" data-color="rgba(255, 64, 38, 1)" data-wave-length="30" data-segment-length="20">
-							<canvas></canvas>
-						</div> -->
-						<div class='stats--wave' data-speed="10" data-ease="Linear" data-wave-type="sawtooth" data-time-modifier="0.1" data-color="rgba(180, 174, 174, 1)" data-wave-length="30" data-segment-length="20">
-							<canvas></canvas>
+						<div class='stats--content'>
+							<blockquote>
+								<p>Hey, look! Tickets for HACKmemphis 2015 are on sale now: http://ptix.co/1DHy6jb</p>
+								<footer>
+									— <cite>@HACKmemphis</cite>
+								</footer>
+							</blockquote>
 						</div>
 					</div>
-					<div class='stats stats-yellow'>
+
+					<div class='stats stats-instagram'>
 						<div class='stats--header'>
-							<h2 class='stats--title'>Respiration Rate</h2>
-							<div class='stats--number'>28</div>
+							<h2 class='stats--title'>Latest Instagram Likes</h2>
 						</div>
-						<!-- <div class='stats--wave' data-speed="8" data-ease="Linear" data-wave-type="sine" data-time-modifier="1.5" data-color="rgba(255, 221, 0, 1)" data-wave-length="5" data-segment-length="5">
-							<canvas></canvas>
-						</div> -->
-						<div class='stats--wave' data-speed="8" data-ease="Linear" data-wave-type="sine" data-time-modifier="1.5" data-color="rgba(180, 174, 174, 1)" data-wave-length="5" data-segment-length="5">
-							<canvas></canvas>
+						<div class='stats--content'>
+							<div id='instafeed'></div>
 						</div>
 					</div>
+
 				</div>
 				<div class='card personal-card anim-card-left js-personal-card'>
 					<div class='biography'>
-						<h2 class='biography--title'>Biography</h2>
-						<p class='biography--content'>This is a paragraph for the biography. I will make it long enough so that it extends pretty far down and possibly a little longer too.</p>
-						<p class='biography--content'>This is a paragraph for the biography. I will make it long enough so that it extends pretty far down and possibly a little longer too.</p>
-						<p class='biography--content'>This is a paragraph for the biography. I will make it long enough so that it extends pretty far down and possibly a little longer too.</p>
+						<h2 class='biography--title'>About</h2>
+						<p class='biography--content'>I’m a front-end web developer. I focus on the HTML, CSS, and Javascript part of a website. The what your eyes can see and what your fingers can swipe part of a website. Do I know jQuery? Angular? Bootstrap? Yeah sure, but those are libraries that stand on top of the fundamentals. Libraries come and go, but the fundamentals are here to stay, for a while at least. Ultimately, I build user interfaces — a tangible version of showing the user respect — for various mediums using web technologies. UI is the concrete implementation of hospitality.</p>
 					</div>
 				</div>
 			</div>
-	    </div>
 
+			<div class='buttons'>
+				<button data-hover-behavior='expand' data-card='.personal-card' data-click-behavior='expand' class='btn'>About</button>
+				<button data-hover-behavior='expand' data-card='.stats-card' data-click-behavior='expand' class='btn'>Stats</button>
+				<button data-hover-behavior='expand' data-card='.maps-card' data-click-behavior='expand' class='btn'>Location</button>
+			</div>
+	    </div>
 		<script type="text/javascript" src="https://maps.googleapis.com/maps/api/js?key=AIzaSyAvcTekpPuZysdAZnjcJCzi34GkXelO280"></script>
 		<script src="js/vendor/jquery-2.1.4.min.js"></script>
 		<script src="js/vendor/sine-waves.js"></script>
+		<script src="js/vendor/instafeed.min.js"></script>
 		<script src="js/profile-card.js"></script>
 	</body>
 </html>

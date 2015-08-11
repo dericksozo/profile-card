@@ -58,4 +58,22 @@
 
         margin-left: -10px;
     }
+
+    &--content blockquote {
+        margin-left: 0.5rem;
+        margin-right: 0.5rem;    
+    }
+
+    &--content blockquote p {
+        font-family: $font-family-freight;
+        font-weight: 1em;
+        color: #fff;
+    }
+
+    &--content blockquote footer {
+        font-family: $font-family-franklin;
+        font-weight: 1em;
+        color: #fff;
+        text-align: right;
+    }
 }

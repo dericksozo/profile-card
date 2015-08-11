@@ -21,6 +21,12 @@ body {
 	background-color: #141313;
 }
 
+::-webkit-scrollbar {
+  width: 7px;
+  height: 7px;
+  background: transparent;
+}
+
 // Organisms
 @import 'deck';
 
@@ -29,3 +35,5 @@ body {
 @import 'stats';
 @import 'video';
 @import 'biography';
+@import 'btn';
+@import 'instafeed';

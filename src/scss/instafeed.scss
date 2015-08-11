@@ -1,0 +1,77 @@
+#instafeed {
+    > a {
+        display: block;
+        width: 20%;
+        float: left;
+        -webkit-filter: grayscale(100%);
+        filter: grayscale(100%);
+
+        overflow: hidden;
+
+        -webkit-transition-property: filter, width;
+        -webkit-transition-timing-function: cubic-bezier(0.075, 0.820, 0.165, 1.000); /* easeOutCirc */
+        -webkit-transition-duration: 320ms;
+
+        transition-property: filter, width;
+        transition-timing-function: cubic-bezier(0.075, 0.820, 0.165, 1.000); /* easeOutCirc */
+        transition-duration: 320ms;
+    }
+
+    > a img {
+        -webkit-animation-iteration-count: infinite;
+        animation-iteration-count: infinite;
+        -webkit-animation-direction: alternate;
+                animation-direction: alternate;
+        -webkit-animation-play-state: paused;
+                animation-play-state: paused;
+        -webkit-animation-duration: 2.5s;
+                animation-duration: 2.5s;
+        -webkit-animation-timing-function: cubic-bezier(0.455, 0.030, 0.515, 0.955);
+                animation-timing-function: cubic-bezier(0.455, 0.030, 0.515, 0.955);
+        -webkit-animation-name: upAndDown;
+                animation-name: upAndDown;
+        -webkit-animation-fill-mode: backwards;
+                animation-fill-mode: backwards;
+    }
+
+    > a:hover {
+        -webkit-filter: grayscale(0%);
+        filter: grayscale(0%);
+    }
+
+    > a.hidden {
+        display: none;
+    }
+
+    > a.clicked {
+        width: 100%;
+        -webkit-filter: grayscale(0%);
+        filter: grayscale(0%);
+    }
+
+    > a:hover.clicked img {
+        -webkit-animation-play-state: running;
+        animation-play-state: running;
+    }
+}
+
+@-webkit-keyframes upAndDown {
+    0% {
+        -webkit-transform: translate3d(0, 0%, 0);
+                transform: translate3d(0, 0%, 0);
+    }
+    100% {
+        -webkit-transform: translate3d(0, -45%, 0);
+                transform: translate3d(0, -45%, 0);
+    }
+}
+@keyframes upAndDown {
+    0% {
+        -webkit-transform: translate3d(0, 0%, 0);
+                transform: translate3d(0, 0%, 0);
+    }
+    100% {
+        -webkit-transform: translate3d(0, -45%, 0);
+                transform: translate3d(0, -45%, 0);
+    }
+}
