@@ -1,7 +1,7 @@
 .card {
 
-    height: 200px;
-    width: 200px;
+    height: 300px;
+    width: 300px;
 
     -webkit-border-radius: 4px;
     -moz-border-radius: 4px;
@@ -64,7 +64,7 @@
     }
 
     &.maps-card > .map {
-        height: 200px;
+        height: 300px;
 
         -webkit-border-radius: 4px;
         -moz-border-radius: 4px;
@@ -135,17 +135,5 @@
 
     &.hidden {
         display: none;
-    }
-}
-
-@media only screen and (min-width: 50em) and (min-height: 50em) {
-    .card {
-        height: 300px;
-        width: 300px;
-    }
-
-    .card.maps-card > .map {
-        height: 300px;
-
     }
 }
